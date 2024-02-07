@@ -1,0 +1,33 @@
+/* BACKGROUND COLOUR */
+.body {
+    background-color: white;
+    
+} 
+
+/* FLEXBOX FOR THE COVER IMAGE*/
+.rows {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;    
+    
+}
+
+/* Create seven equal columns */
+.columns {
+    flex: 14%;
+}
+
+.coverImage {
+    width: 100%;
+}
+
+.post-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; 
+    border: 3px solid gray;
+}
+
+.postcontainerimg {
+    max-width: 250px;
+}
