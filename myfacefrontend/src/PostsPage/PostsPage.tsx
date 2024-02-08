@@ -5,6 +5,7 @@ import './PostsCSS.scss'
 
 export default function PostsPage() {
     const [myData, setMyData] = useState<PostModel[]>([]);
+    // const [likedBy, setLikedBy] = useState<PostModel[]>([]);
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -18,6 +19,11 @@ export default function PostsPage() {
     return <div>Waiting for data!</div>
     }
 
+    function likePost ()
+    {
+        return setLikedBy((likedBy) => likedBy.push(data.postedBy.username))
+    }
+
     return (
     <body className="body rows">
     <div >
@@ -28,7 +34,10 @@ export default function PostsPage() {
                 <div className="columns">ID: {data.id}</div>
                 <div className="columns">Post: {data.message}</div>
                 <div className="columns">Posted By: {data.postedBy.username}</div>  
-                <div className="likeButton">Liked By: {data.likedBy.length}</div>
+                <div className="likeButton">Liked By: {data.likedBy.length}
+                
+                    <form method="post" onSubmit={handleSubmit} action={likePost()} ><button type="submit">Like</button></form>
+                </div>
                 <div className="dislikeButton">Dislike By: {data.dislikedBy.length}</div>    
             </div>
         </div> 
@@ -37,7 +46,7 @@ export default function PostsPage() {
     </body>
     );
 
-        }      
+        }     
 
 
 // data.createdAt.format('YYYY-MM-DD HH:mm:ss')
@@ -49,4 +58,4 @@ export default function PostsPage() {
 // likedBy: PostUserModel[];
 // dislikedBy: PostUserModel[];
 
-// <button onClick={() => setCount((count) => count + 1)}>count is {count}></button>
+//<button onClick={() => setLikedBy((likedBy) => likedBy.push())}>Liked by: {likedBy}></button>

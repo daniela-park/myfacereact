@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route, Switch, Link} from 'react-router-dom';
 import PostsPage from './PostsPage/PostsPage';
 import UsersPage from './UsersPage/UsersPage';
+import CreateUser from './CreateUser/CreateUser';
 
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
 export function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ export function App() {
       <Routes> 
         <Route path="/posts" element={<PostsPage/>}></Route> 
         <Route path="/users" element={<UsersPage/>}></Route> 
-        <Route path="*"> </Route> 
+        <Route path="/users/create" element={<CreateUser/>}></Route>  
       </Routes>
     </Router > 
       );

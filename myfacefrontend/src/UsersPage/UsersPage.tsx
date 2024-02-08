@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import {UserModel } from "../Models/userModel";
 import './UsersCSS.scss'
 
+// const [firstElement, secondElement] = aList; // Array Destructuring
+// const {name, lastname} = aObject; // Object Destructuring
+
 export default function UsersPage() {
-    const [myData, setMyData] = useState<PostModel[]>([]);
+    const [myData, setMyData] = useState<UserModel[]>([]); // [myData is a constant, setMyData is a function - Both from useState]
     
     useEffect(() => {
         fetch("http://localhost:3001/users")

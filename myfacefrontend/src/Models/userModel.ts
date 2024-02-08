@@ -1,13 +1,13 @@
 import moment from "moment";
 
-interface UserPostModel {
+interface UserPostModel { // Post details created by the user
     id: number;
     message: string;
     imageUrl: string;
     createdAt: moment.Moment;
 }
 
-export interface UserModel {
+export interface UserModel { // User details
     id: number;
     name: string;
     username: string;
